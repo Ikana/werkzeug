@@ -1158,8 +1158,8 @@ def dump_cookie(
 
     samesite = samesite.title() if samesite else None
 
-    if samesite not in {"Strict", "Lax", "None"}:
-        raise ValueError("SameSite must be 'Strict', 'Lax', or 'None'.")
+    if samesite not in {"Strict", "Lax", "None", None}:
+        raise ValueError("SameSite must be 'Strict', 'Lax', 'None' or None.")
 
     buf = [key + b"=" + _cookie_quote(value)]
 
